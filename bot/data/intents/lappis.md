@@ -1,12 +1,22 @@
 ## intent:quem_eh_lappisudo
 - quem é você
+- quem e voce
+- quem e vc
 - por que seu nome é lappisudo
+- porque seu  nome e lappisudo
+- pq seu nome e lappisudo
+- pq seu nome é lappisudo
 - o que é o lappisudo
+- o que e o lappisudo
 - de onde você surgiu
+- de onde voce surgiu
+- de onde vc surgiu
 - significado do nome lappisudo
 - quem é o lappisudo
+- quem e o lappisudo
 - assistente virtual do lappis
 - definição lappisudo
+- definicao lappisudo
 - chatbot
 
 ## intent:o_que_eh_lappis

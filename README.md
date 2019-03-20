@@ -1,9 +1,14 @@
-# Rasa Boilerplate
+# Bot do LAPPIS
 
-Um projeto feito em Rasa com configurações necessárias para a construção
-de um projeto grande de chatbot.
 
-Este projeto teve como base a [Tais](http://github.com/lappis-unb/tais).
+
+Este projeto teve como base a [Tais](http://github.com/lappis-unb/tais). Com o objetivo de ser divertido e apresentar o laboratório.
+
+Cor do Livechat (rocket)
+
+#0068b4
+
+
 
 ## Bot
 

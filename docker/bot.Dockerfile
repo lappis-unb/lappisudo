@@ -6,7 +6,7 @@ run python -m pip install --upgrade pip
 
 add ./bot.requirements.txt /tmp
 
-run pip install -r /tmp/bot.requirements.txt
+run pip install --upgrade pip && pip install -r /tmp/bot.requirements.txt
 run python -c "import nltk; nltk.download('stopwords');"
 
 add ./bot /bot
@@ -21,8 +21,8 @@ env TRAINING_EPOCHS=20                    \
     WORDS_PER_SECOND_TYPING=5              \
     ROCKETCHAT_ADMIN_USERNAME=admin        \
     ROCKETCHAT_ADMIN_PASSWORD=admin        \
-    ROCKETCHAT_BOT_USERNAME=tais           \
-    ROCKETCHAT_BOT_PASSWORD=tais           \
+    ROCKETCHAT_BOT_USERNAME=bot            \
+    ROCKETCHAT_BOT_PASSWORD=bot            \
     ENVIRONMENT_NAME=localhost             \
     BOT_VERSION=last-commit-hash           \
     ENABLE_ANALYTICS=False                 \

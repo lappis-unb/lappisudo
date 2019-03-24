@@ -82,16 +82,6 @@
 - pesquisas
 - software
 
-## intent:promova_cultura
-- quero saber mais sobre promova cultura
-- quero falar sobre promova cultura
-- falar sobre promova cultura
-- entender promova cultura
-- saber mais sobre promova cultura
-- promova cultura
-- #promovacultura
-- #promova
-
 ## intent:salic_ml
 - quero saber mais sobre salic ml
 - quero saber mais sobre salic-ml
@@ -136,7 +126,7 @@
 - quero saber mais do empurrando
 - gostei do EJ me fale mais
 
-## intent:pessoa_mais_cool
+## intent:carla
 - quem é a diva lappis
 - quem é a musa  lappis
 - quem é a pessoa mais legal
@@ -148,7 +138,6 @@
 - quem lembra de fechar  issue
 - quem anima a galera
 - diva lappis
-- musa
 - pessoa mais legal
 - inspiração lappis
 - pessoa mais descolada

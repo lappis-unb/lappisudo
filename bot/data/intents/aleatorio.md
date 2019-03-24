@@ -16,7 +16,7 @@
 - [biblia](religiao)
 - [religiao](religiao)
 
-## intent:espoerte
+## intent:esporte
 - voce joga [futebol](esporte)
 - vamos falar de [futebol](esporte)
 - qual o seu [esporte](esporte) favorito?

@@ -1,6 +1,6 @@
 ### Rasa ###
 bot/models
-rasa_core.log
+bot/rasa_core.log
 errors.json
 
 ### Rasa evaluation ###

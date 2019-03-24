@@ -8,19 +8,22 @@ from datetime import date
 logger = logging.getLogger(__name__)
 
 
-class ActionMarcarReuniao(Action):
+class ActionIntegrantesAgora(Action):
     def name(self):
-        return "action_marcar_reuniao"
+        return "action_integrantes_agora"
 
     def run(self, dispatcher, tracker, domain):        
-        sheets = None
+        dispatcher.utter_message("Ta ok, vou conferir aqui..")
+        sheet = None
         try:
-            sheets = googlesheet.GoogleSheetIntegration(sheetName='relacao_alunos_lappis')            
+            sheet = googlesheet.GoogleSheetIntegration()            
         except ValueError:
-            dispatcher.utter_message(ValueError)
+            dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
             logger.error(ValueError)
+        sheetValues = []
         try:
-            dispatcher.utter_message("Teste")
+            sheetValues = sheet.sheet_values()
         except ValueError:
-            dispatcher.utter_message(ValueError)
+            dispatcher.utter_message("Não consegui ler a planilha :/")
             logger.error(ValueError)
+        dispatcher.utter_message(sheetValues[4][1])

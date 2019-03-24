@@ -46,7 +46,7 @@ intents:
   - quais_tecnologias
   - zoacao_java
 
-  - action_test
+  - integrantes_agora
 
 entities:
   - religiao
@@ -553,4 +553,4 @@ actions:
   - utter_manter_conversa
   - utter_manter_objetivo
 
-  - action_test
+  - action_integrantes_agora

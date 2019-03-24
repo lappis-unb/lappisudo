@@ -4,9 +4,6 @@
 
 Este projeto teve como base a [Tais](http://github.com/lappis-unb/tais). Com o objetivo de ser divertido e apresentar o laboratório.
 
-Cor do Livechat (rocket)
-
-#0068b4
 
 
 
@@ -36,6 +33,10 @@ Action: Send Message
 ```
 
 O valor `http://localhost:8080/` deve ser a URL de acesso do Bot.
+
+* Muda a cor do `livechat` nas configurações da Rocket.Chat
+
+`#0068b4`
 
 #### Instalação
 
@@ -76,16 +77,6 @@ sudo docker-compose run --rm bot make train
 sudo docker-compose run --rm bot make train-online
 ```
 
-
-
-
-## Tests
-
-Para executar os testes automatizados do bot faça:
-
-```sh
-sudo docker-compose -f docker/pytest-docker-compose.yml up
-```
 
 
 

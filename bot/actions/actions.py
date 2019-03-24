@@ -1,15 +1,26 @@
 from rasa_core_sdk import Action
 from rasa_core_sdk.events import SlotSet
-import requests
-import random
+from . import googlesheet
+import logging
+import datetime
+from datetime import date
 
-class ActionTest(Action):
-   def name(self):
-      return "action_test"
+logger = logging.getLogger(__name__)
 
-   def run(self, dispatcher, tracker, domain):
+
+class ActionMarcarReuniao(Action):
+    def name(self):
+        return "action_marcar_reuniao"
+
+    def run(self, dispatcher, tracker, domain):        
+        sheets = None
         try:
-          dispatcher.utter_message("Mensagem enviada por uma custom action.")
+            sheets = googlesheet.GoogleSheetIntegration(sheetName='relacao_alunos_lappis')            
         except ValueError:
-          dispatcher.utter_message(ValueError)
-
+            dispatcher.utter_message(ValueError)
+            logger.error(ValueError)
+        try:
+            dispatcher.utter_message("Teste")
+        except ValueError:
+            dispatcher.utter_message(ValueError)
+            logger.error(ValueError)

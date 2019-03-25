@@ -46,7 +46,7 @@ intents:
   - quais_tecnologias
   - zoacao_java
 
-  - action_test
+  - integrantes_agora
 
 entities:
   - religiao
@@ -504,6 +504,10 @@ templates:
           Minha missão é te mostrar o brilhantismo do Lappis, você pode perguntar sobre assuntos que estejam relacionados aos tópicos que eu listei lá em cima. Então bora lá!
           Que tal conhecer mais sobre os nossos projetos? Pergunta aí :P
 
+  utter_aviso_action:
+    - text: |
+          Blz, vou me conectar ;)
+
 actions:
   - utter_default
   - utter_cumprimentar
@@ -552,5 +556,6 @@ actions:
   - utter_zoacao_java
   - utter_manter_conversa
   - utter_manter_objetivo
+  - utter_aviso_action
 
-  - action_test
+  - action_integrantes_agora

@@ -47,6 +47,7 @@ intents:
   - zoacao_java
 
   - integrantes_agora
+  - integrante_horario
 
 slots:
   nome:
@@ -571,3 +572,4 @@ actions:
   - utter_aviso_action
 
   - action_integrantes_agora
+  - action_integrante_horario

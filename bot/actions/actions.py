@@ -16,7 +16,7 @@ class ActionIntegrantesAgora(Action):
         dispatcher.utter_message("Conferindo...")
         sheet = None
         try:
-            sheet = googlesheet.GoogleSheetIntegration()            
+            sheet = googlesheet.GoogleSheetIntegration()
         except ValueError:
             dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
             logger.error(ValueError)
@@ -32,5 +32,7 @@ class ActionIntegranteHorario(Action):
 
     def run(self, dispatcher, tracker, domain):        
         dispatcher.utter_message("Conferindo...")
-        name = tracker.get_slot('data')
+        name = tracker.get_slot('nome')
         dispatcher.utter_message(name)
+        x = tracker.current_slot_values()['nome']
+        dispatcher.utter_message(x)

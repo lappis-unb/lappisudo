@@ -1,8 +1,7 @@
 ### Rasa ###
 bot/models
 bot/rasa_core.log
-errors.json
-bot/actions/client_secret.json
+client_secret.json
 
 ### Rasa evaluation ###
 notebooks/models/

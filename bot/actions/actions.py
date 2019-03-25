@@ -1,15 +1,28 @@
 from rasa_core_sdk import Action
 from rasa_core_sdk.events import SlotSet
-import requests
-import random
+from . import googlesheet
+import logging
+import datetime
+from datetime import date
 
-class ActionTest(Action):
-   def name(self):
-      return "action_test"
+logger = logging.getLogger(__name__)
 
-   def run(self, dispatcher, tracker, domain):
+
+class ActionIntegrantesAgora(Action):
+    def name(self):
+        return "action_integrantes_agora"
+
+    def run(self, dispatcher, tracker, domain):        
+        dispatcher.utter_message("Conferindo...")
+        sheet = None
         try:
-          dispatcher.utter_message("Mensagem enviada por uma custom action.")
+            sheet = googlesheet.GoogleSheetIntegration()            
         except ValueError:
-          dispatcher.utter_message(ValueError)
-
+            dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
+            logger.error(ValueError)
+        sheetValues = []
+        try:
+            dispatcher.utter_message(sheet.get_timetable())
+        except ValueError:
+            dispatcher.utter_message("Não consegui ler a planilha :/")
+            logger.error(ValueError)

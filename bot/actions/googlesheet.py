@@ -17,9 +17,6 @@ class GoogleSheetIntegration():
             self.sheet = self.connect_to_google_sheets()
         except ValueError:
             logger.error(ValueError)
-        logger.error('*'*50)
-        logger.error(self.get_timetable())
-        logger.error('*'*50)
 
     def connect_to_google_sheets(self, sheetName='relacao_alunos_lappis',
                                  secretFile='actions/client_secret.json'):
@@ -51,28 +48,17 @@ class GoogleSheetIntegration():
     
     def get_timetable(self):
         now = datetime.datetime.now().hour
-        logger.error(now)
         now += self.utc
-        logger.error(now)
         timeTable = self.find_timetable(now=now)
         if timeTable == 0:
             return 'Não sei quem está no LAPPIS as {}h'.format(now.hour)
-        logger.error(timeTable)
-        logger.error(self.timeTables[timeTable])
-        cellsRange = []
-        cellsRange.append(self.sheet.find(self.timeTables[timeTable]))
-        cellsRange.append(self.sheet.find(self.timeTables[timeTable+1]))
-        logger.error(cellsRange[0].row)
-        logger.error(cellsRange[1].row)
-        query = 'B'+str(cellsRange[0].row)+':'+'B'+str(cellsRange[1].row-self.gap)
-        logger.error(query)
-        logger.error(self.sheet.range(query))
-        presence = self.get_lappis_timetable_presense(cellList=self.sheet.range(query))
-        logger.error(presence)
+        presence = self.get_presence(timeTable)
+        if presence == '\n\n':
+            presence = 'Ninguém :/'
         return presence
 
+
     def find_timetable(self, now=16):
-        logger.error(now)
         timeTable = 0
         for i in range(1, len(self.timeTables)):
             if (now >= int(self.timeTables[i].split('h')[0]) and 
@@ -86,3 +72,18 @@ class GoogleSheetIntegration():
             names += cell.value
             names += '\n'
         return names
+
+    def get_presence(self, timeTable=0):
+        cellsRange = []
+        presence = "Não consegui pegar presença"
+        try:
+            cellsRange.append(self.sheet.find(self.timeTables[timeTable]))
+            cellsRange.append(self.sheet.find(self.timeTables[timeTable+1]))
+        except:
+            logger.error(ValueError)
+        try:
+            query = 'B'+str(cellsRange[0].row)+':'+'B'+str(cellsRange[1].row-self.gap)
+            presence = self.get_lappis_timetable_presense(cellList=self.sheet.range(query))
+        except:
+            logger.error(ValueError)
+        return presence

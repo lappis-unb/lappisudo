@@ -13,7 +13,7 @@ class ActionIntegrantesAgora(Action):
         return "action_integrantes_agora"
 
     def run(self, dispatcher, tracker, domain):        
-        dispatcher.utter_message("Ta ok, vou conferir aqui..")
+        dispatcher.utter_message("Conferindo...")
         sheet = None
         try:
             sheet = googlesheet.GoogleSheetIntegration()            

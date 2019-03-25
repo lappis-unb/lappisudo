@@ -10,7 +10,7 @@ services:
       - ROOT_URL=http://localhost:3000
       - MONGO_URL=mongodb://mongo:27017/rocketchat
       - ADMIN_USERNAME=admin
-      - ADMIN_PASS=admin
+      - ADMIN_PASS=lambdalilianaq15
     ports:
       - 3000:3000
     depends_on:
@@ -36,8 +36,8 @@ services:
       - ROCKETCHAT_URL=rocketchat:3000
       - ROCKETCHAT_ADMIN_USERNAME=admin
       - ROCKETCHAT_ADMIN_PASSWORD=admin
-      - ROCKETCHAT_BOT_USERNAME=bot
-      - ROCKETCHAT_BOT_PASSWORD=bot
+      - ROCKETCHAT_BOT_USERNAME=lappisudo
+      - ROCKETCHAT_BOT_PASSWORD=lappisudo
 
       # Should be set to 'production' or 'beta' or 'dev'
       - ENVIRONMENT_NAME=localhost

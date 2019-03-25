@@ -38,7 +38,7 @@ parser.add_argument(
     help='Bot password at RocketChat(default: bot)'
 )
 parser.add_argument(
-    '--bot-avatar', '-ba', type=str, default='https://raw.githubusercontent.com/lappis-unb/rouana/master/images/rouana_avatar.jpeg',
+    '--bot-avatar', '-ba', type=str, default='https://avatars3.githubusercontent.com/u/29209446?s=200&v=4',
     help='Bot avatar photo link (default: bot\'s github avatar)'
 )
 parser.add_argument(
@@ -161,7 +161,7 @@ def configure_livechat():
 
     # Change Livechat Color
     api_post('settings/Livechat_title_color', {
-        'value': "#039046",
+        'value': "#0068b4",
         'editor': 'color'
     })
 

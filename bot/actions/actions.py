@@ -22,8 +22,7 @@ class ActionIntegrantesAgora(Action):
             logger.error(ValueError)
         sheetValues = []
         try:
-            sheetValues = sheet.sheet_values()
+            dispatcher.utter_message(sheet.get_timetable())
         except ValueError:
             dispatcher.utter_message("Não consegui ler a planilha :/")
             logger.error(ValueError)
-        dispatcher.utter_message(sheetValues[4][1])

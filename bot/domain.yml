@@ -48,6 +48,14 @@ intents:
 
   - integrantes_agora
 
+slots:
+  nome:
+    type: unfeaturized
+  dia:
+    type: unfeaturized
+  hora:
+    type: unfeaturized
+
 entities:
   - religiao
   - esporte
@@ -72,6 +80,10 @@ entities:
   - hobby
   - bff
   - historia
+
+  - nome
+  - dia
+  - hora
 
 templates:
   utter_default:

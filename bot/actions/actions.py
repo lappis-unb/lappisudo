@@ -20,9 +20,17 @@ class ActionIntegrantesAgora(Action):
         except ValueError:
             dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
             logger.error(ValueError)
-        sheetValues = []
         try:
             dispatcher.utter_message(sheet.get_timetable())
         except ValueError:
             dispatcher.utter_message("Não consegui ler a planilha :/")
             logger.error(ValueError)
+
+class ActionIntegranteHorario(Action):
+    def name(self):
+        return "action_integrante_horario"
+
+    def run(self, dispatcher, tracker, domain):        
+        dispatcher.utter_message("Conferindo...")
+        name = tracker.get_slot('data')
+        dispatcher.utter_message(name)

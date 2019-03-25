@@ -51,7 +51,7 @@ class GoogleSheetIntegration():
         now += self.utc
         timeTable = self.find_timetable(now=now)
         if timeTable == 0:
-            return 'Não sei quem está no LAPPIS as {}h'.format(now.hour)
+            return 'Não sei quem está no LAPPIS as {}h'.format(now)
         presence = self.get_presence(timeTable)
         if presence == '\n\n':
             presence = 'Ninguém :/'

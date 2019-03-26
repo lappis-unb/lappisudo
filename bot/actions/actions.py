@@ -21,7 +21,7 @@ class ActionIntegrantesAgora(Action):
             dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
             logger.error(ValueError)
         try:
-            dispatcher.utter_message(sheet.get_timetable())
+            dispatcher.utter_message(sheet.get_now_timetable())
         except ValueError:
             dispatcher.utter_message("Não consegui ler a planilha :/")
             logger.error(ValueError)

@@ -1,3 +1,4 @@
+import re
 import gspread
 import logging
 import datetime
@@ -52,7 +53,7 @@ class GoogleSheetIntegration():
         if timeTable == 0:
             return 'Não sei quem está no LAPPIS as {}h'.format(now)
         presence = self.get_presence(timeTable)
-        if presence == '\n\n':
+        if presence == '\n':
             presence = 'Ninguém :/'
         return presence
 
@@ -84,6 +85,7 @@ class GoogleSheetIntegration():
         try:
             query = weekday+str(cellsRange[0].row)+':'+weekday+str(cellsRange[1].row-self.gap)
             presence = self.get_lappis_timetable_presense(cellList=self.sheet.range(query))
+            presence = re.sub('\n\n*','\n',presence)
         except:
-            logger.error(ValueError)
+            logger.error(ValueError)          
         return presence

@@ -579,3 +579,15 @@
     - utter_chatbot_tais
     - utter_manter_conversa
 
+## path 2
+* cumprimentar
+        - utter_cumprimentar
+        - utter_manter_objetivo
+* quem_te_criou
+        - utter_quem_te_criou
+        - utter_manter_conversa
+
+## path 2
+* quem_te_criou
+        - utter_quem_te_criou
+        - utter_manter_conversa

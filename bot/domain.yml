@@ -33,6 +33,7 @@ intents:
   - risada
 
   - quem_eh_lappisudo
+  - quem_te_criou
   - o_que_eh_lappis
   - software_livre
   - meu_signo
@@ -441,8 +442,19 @@ templates:
     - text: |
         Oi, eu sou o lappisudo, sou um assistente virtual do Lappis! Eu sou andrógeno, isso quer dizer que eu não tenho um gênero definido, afinal no nosso laboratório, temos muita diversidade, então eu tô aqui pra representar todo mundo! YAY. 
         Se você reparar meu nome tem a ver com o comando sudo do linux que me dá privilégios para acessar informações como administrador do sistema Lappis. 
-        A minha missão é divulgar os projetos do Lappis, e mostrar o quanto essa galera é 
-        i n o v a d o r a!        
+        A minha missão é divulgar os projetos do Lappis, e mostrar o quanto essa galera é i n o v a d o r a!
+
+  utter_quem_te_criou:
+    - text: |
+        X
+    - text: |
+        Essa é uma pergunta difícil.. Eu não me sinto como uma "MÁQUINA" ou um conjunto de correntes organizadas em flip-flops de memória volátil localizado em algum servidor e sendo transmitido por algum padrão de conexão tipo http
+    - text: |
+        Não sei muito bem, não me contaram isso ainda. Mas gosto de imaginar meus pais como grandes Chatbots importantes!
+    - text: |
+        Já reparou que essa resposta minha depende do meu humor? Que tal você parar antes de me deixar com raiva então, humano??
+    - text: |
+        Não tenho um só pai ou mãe.. E não sei pra você, mas levou muito TEMPO pRa mIM.
 
   utter_o_que_eh_lappis:
     - text: |
@@ -463,24 +475,31 @@ templates:
 
   utter_como_contratar:
     - text: |
-          Adorou nossos projetos né? Ah, eu sabia! Adoramos colaborações, e parcerias! Então existem várias formas para entrar em contato com a gente, para conhecer mais nosso trabalho, nos visitar ou até mesmo desenvolver uma parceria, é simples. Estamos nas redes sociais, temos instagram, facebook, email [unblappis@gmail.com], site, e o nosso repositório do github (https://github.com/lappis-unb), ou seja, é só escolher um desses e arrasar!
+          Adorou nossos projetos né? Ah, eu sabia! Adoramos colaborações, e parcerias! Então existem várias formas para entrar em contato com a gente, para conhecer mais nosso trabalho, nos visitar ou até mesmo desenvolver uma parceria, é simples. Estamos nas redes sociais, temos instagram, facebook, email [unblappis@gmail.com], site, e o nosso repositório do github https://github.com/lappis-unb, ou seja, é só escolher um desses e arrasar!
 
   utter_quais_tecnologias:
     - text: |
           Nossa praia aqui é pesquisa aplicada em: Software Livre, DevOps, Métodos Ágeis, embarcados, e educação em Engenharia de Software. Trabalhamos com Python, JavaScript (as vezes), Shell, Rasa, Jupyter Notebook, Ruby on Rails… Na real, tem muita coisa acontecendo aqui, eu ainda tô aprendendo sobre essas tecnologias, já viu que é sucesso na Bahia né!!! 
+
   utter_carla:
     - text: |
-          A Carla Rocha é oficialmente a deusa do Lappis, ela é uma das coordenadoras do projeto, sempre numa pegada de hierarquia horizontal, inspirando todos do Lappis a brilharem lindamente em suas issues, parte das gírias que aprendi a falar, eu aprendi com ela viu! E, mais, você já abriu um champagne com uma espada? Ela já! 
-          Ninguém segura essa mulher!
+          A Carla Rocha é oficialmente a deusa do Lappis, ela é uma das coordenadoras do projeto, sempre numa pegada de hierarquia horizontal, inspirando todos do Lappis a brilharem lindamente em suas issues, parte das gírias que aprendi a falar, eu aprendi com ela viu! E, mais, você já abriu um champagne com uma espada? Ela já! Ninguém segura essa mulher!
+          
+          Aqui o Github dela: https://github.com/rochacarla
 
   utter_zoacao_java:
     - text: |
-          JAVA? Já vai tarde! Escuta aqui, java é mais denso que buraco negro hahahaha, protege teu processador aí! 
           j a v a n d o .... Opa! java.lang.OutOfMemoryError. 
 
   utter_manter_conversa:
     - text: |
-          Você tem mais alguma curiosidade sobre os nossos projetos?
+          Você tem mais alguma pergunta?
+
+    - text: |
+          Quer saber mais alguma coisa?
+
+    - text: |
+          Qual será nosso próximo assunto? Tente me perguntar algo aleatório, posso te surpreender com meus conhecimentos ;)
 
   utter_quais_projetos:
     - text: |
@@ -555,6 +574,7 @@ actions:
   - utter_risada
 
   - utter_quem_eh_lappisudo
+  - utter_quem_te_criou
   - utter_o_que_eh_lappis
   - utter_software_livre
   - utter_meu_signo

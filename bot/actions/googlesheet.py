@@ -11,7 +11,7 @@ class GoogleSheetIntegration():
     def __init__(self, sheet=None, utc=-3, gap=2):
         self.colToLetter = {1:'B', 2:'C', 3:'D', 4:'E', 5:'F', 6:'G'}
         self.timeTables = {1:'08h-10h', 2:'10h-12h', 3:'12h-14h', 4:'14h-16h',
-                      5:'14h-16h', 6:'16h-18h'}
+                      5:'16h-18h', 6:'fim_dia'}
         self.utc = utc
         self.gap = gap
         try:
@@ -58,7 +58,7 @@ class GoogleSheetIntegration():
         return presence
 
 
-    def find_timetable(self, now=16):
+    def find_timetable(self, now=20):
         timeTable = 0
         for i in range(1, len(self.timeTables)):
             if (now >= int(self.timeTables[i].split('h')[0]) and 

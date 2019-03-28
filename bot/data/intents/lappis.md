@@ -19,11 +19,14 @@
 - definicao lappisudo
 - chatbot
 
-## intent:o_que_eh_lappis
+## intent:quem_te_criou
 - quem te criou
-- quem te fez
-- quem é seu pai
-- quem te desenvolveu 
+- Alguém te fez
+- você tem pai
+- como vc nasceu
+- quem te desenvolveu
+
+## intent:o_que_eh_lappis 
 - o que é o lappis
 - o que significa lappis
 - lappis é sigla de quê

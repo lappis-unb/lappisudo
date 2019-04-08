@@ -1,11 +1,8 @@
 # Bot do LAPPIS
 
-
+## LAPPISUDO
 
 Este projeto teve como base a [Tais](http://github.com/lappis-unb/tais). Com o objetivo de ser divertido e apresentar o laboratório.
-
-
-
 
 ## Bot
 
@@ -63,6 +60,34 @@ Para executar o bot em um site você precisa inserir o seguinte Javascript na su
 **Atenção**: Você precisa alterar a variavel `host` dentro do código acima para a url do site onde estará
 o seu Rocket.Chat.
 
+
+
+
+### Telegram
+
+* Atualize as variáveis de ambiente:
+
+```sh
+- TELEGRAM_BOT_USERNAME=lappisbot
+- TELEGRAM_TOKEN=token
+- TELEGRAM_WEBHOOK=webhook
+```
+
+* Caso ainda não tenha treinado o bot execute:
+
+```sh
+docker-compose run --rm bot make train
+```
+
+* Execute o script do bot no telegram:
+
+```sh
+docker-compose up bot-telegram
+```
+
+* A porta utilizada é a 5005
+
+
 ### Console
 
 ```sh
@@ -80,33 +105,6 @@ sudo docker-compose run --rm bot make train-online
 
 
 
-## Analytics
-
-### Setup
-
-```
-sudo docker-compose run --rm -v $PWD/analytics:/analytics bot python /analytics/setup_elastic.py
-sudo docker-compose up -d elasticsearch
-```
-
-Lembre-se de setar as seguintes variaveis de ambiente no `docker-compose`.
-
-```
-ENVIRONMENT_NAME=localhost
-BOT_VERSION=last-commit-hash
-```
-
-### Vizualização
-
-```
-sudo docker-compose up -d kibana
-```
-
-Você pode acessar o kibana no `locahost:5601`
-
-
-
-
 ## Notebooks - Análise de dados
 
 ### Setup
@@ -118,6 +116,7 @@ docker-compose up -d notebooks
 ```
 
 Acesse o notebook em `localhost:8888`
+
 
 
 

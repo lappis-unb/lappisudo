@@ -38,29 +38,31 @@ services:
       - ROCKETCHAT_ADMIN_PASSWORD=admin
       - ROCKETCHAT_BOT_USERNAME=lappisudo
       - ROCKETCHAT_BOT_PASSWORD=lappisudo
-
-      # Should be set to 'production' or 'beta' or 'dev'
-      - ENVIRONMENT_NAME=localhost
-      # Last commit hash using this command: git rev-parse HEAD
-      - BOT_VERSION=last-commit-hash
-
-      # Analytics config
-      - ENABLE_ANALYTICS=False
-      - ELASTICSEARCH_URL=elasticsearch:9200
-
-      # HTTP login on elasticsearch
-      # - ELASTICSEARCH_USER=admin
-      # - ELASTICSEARCH_PASSWORD=admin
-      # - ELASTICSEARCH_HTTP_SCHEME=https
-      # - ELASTICSEARCH_PORT=443
     ports:
-      - 5005:5005
       - 5002:5002
     depends_on:
       - actions
     volumes:
       - ./bot:/bot
       - ./scripts:/scripts
+
+  bot-telegram:
+    build:
+      context: .
+      dockerfile: ./docker/bot.Dockerfile
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_USERNAME=lappisbot
+      - TELEGRAM_TOKEN=token
+      - TELEGRAM_WEBHOOK=webhook
+    ports:
+      - 5005:5005
+    depends_on:
+      - actions
+    volumes:
+      - ./bot:/bot
+      - ./scripts:/scripts
+    command: sh -c "make run-telegram"
 
   actions:
     build:

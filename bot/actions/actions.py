@@ -4,6 +4,8 @@ from . import googlesheet
 import logging
 import datetime
 from datetime import date
+import requests
+
 
 logger = logging.getLogger(__name__)
 
@@ -31,8 +33,15 @@ class ActionIntegranteHorario(Action):
         return "action_integrante_horario"
 
     def run(self, dispatcher, tracker, domain):        
-        dispatcher.utter_message("Conferindo...")
-        name = tracker.get_slot('nome')
-        dispatcher.utter_message(name)
-        x = tracker.current_slot_values()['nome']
-        dispatcher.utter_message(x)
+        name = tracker.current_slot_values()['nome']
+        try:
+            sheet = googlesheet.GoogleSheetIntegration()
+        except ValueError:
+            dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
+            logger.error(ValueError)
+        try:
+            dispatcher.utter_message(sheet.get_worker_timetable(name))
+        except ValueError:
+            dispatcher.utter_message("Não consegui ler a planilha :/")
+            logger.error(ValueError)
+

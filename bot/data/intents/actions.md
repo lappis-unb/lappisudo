@@ -7,15 +7,35 @@
 - me diga quem esta presente no lappis agora por favor
 
 
-## intent:integrante_horario
+## intent:integrante_1_nome_horario
 - quando que o [Eduardo Nunes](nome) vai estar no lappis
 - [Victor Moura](nome)
-- [Arthur Diniz](nome)
-- [Francisco Matias](nome)
-- me diga quando que [Fabíola Malta](nome) trabalha
-- [Bruna Pinos](nome) vai trabalhar quais dias essa semana
-- quais são os horários do [Arthur Temporim](nome) no lappis essa semana
-- me informe os horarios da [Paloma](nome)
-- [Gabriela](nome) trabalha quando essa semana
-- horarios [Thalisson](nome)
-- horários [Carla](nome)
+- [Victor Moura](nome)
+- [Pablo Diego](nome)
+- me diga quando que [Rodrigo Oliveira](nome) trabalha
+- [Fabíola Malta](nome) vai trabalhar quais dias essa semana
+- quais são os horários do [João Guilherme](nome) no lappis essa semana
+- me informe os horarios da [Guilherme Lacerda](nome)
+- [Bruna Pinos](nome) trabalha quando essa semana
+- horarios [Paloma](nome)
+- horários [Bruna Nayara](nome)
+- Qual é o horário da [Matheus Miranda](nome)
+- Que horas o [Gabriela](nome) trabalha
+- Horários [Arthur Temporim](nome)
+- Qual os horarios do [Leonardo](nome)
+- Qual o horário de trabalho de [Ânia Gomes](nome)
+- [Kamilla](nome)
+- [Kamilla](nome)
+- [Thalisson](nome) 
+- [Andre](nome) 
+- [Alax](nome) 
+- [Guilherme Augusto](nome) 
+- [Lucas Martins](nome) 
+- [Arthur Diniz](nome) 
+- [Carla](nome) 
+- [Poppi](nome) 
+- [Joênio](nome) 
+- [Maia](nome) 
+- [Fábio](nome)
+- [Renato](nome)
+

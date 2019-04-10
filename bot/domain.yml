@@ -48,15 +48,7 @@ intents:
   - zoacao_java
 
   - integrantes_agora
-  - integrante_horario
-
-slots:
-  nome:
-    type: unfeaturized
-  dia:
-    type: unfeaturized
-  hora:
-    type: unfeaturized
+  - integrante_1_nome_horario
 
 entities:
   - religiao
@@ -86,6 +78,14 @@ entities:
   - nome
   - dia
   - hora
+
+slots:
+  nome:
+    type: unfeaturized
+  dia:
+    type: unfeaturized
+  hora:
+    type: unfeaturized
 
 templates:
   utter_default:

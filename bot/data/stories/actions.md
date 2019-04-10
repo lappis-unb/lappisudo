@@ -15,13 +15,13 @@
 ## cumprimentar action_integrante_horario
 * cumprimentar
     - utter_cumprimentar
-* integrante_horario
+* integrante_1_nome_horario
     - utter_aviso_action
     - action_integrante_horario
     - utter_manter_conversa
 
 ## action_integrante_horario
-* integrante_horario
+* integrante_1_nome_horario
     - utter_aviso_action
     - action_integrante_horario
     - utter_manter_conversa

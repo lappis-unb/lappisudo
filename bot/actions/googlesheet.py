@@ -89,3 +89,31 @@ class GoogleSheetIntegration():
         except:
             logger.error(ValueError)          
         return presence
+
+    def get_worker_timetable(self, worker=None):
+        lappis_table = self.sheet_values()
+        time = ''
+        week_days = lappis_table[2][1:-2]
+        result = ''
+        first = True
+
+        for w in range(1, 6):
+            wd = w - 1
+            week_day = week_days[wd]
+            work_today = False
+            for i in range(4,len(lappis_table)):
+                if lappis_table[i][0] != '':
+                    time = lappis_table[i][0]
+                if lappis_table[i][w].lower() == worker.lower():
+                    if not work_today:
+                        work_today = True
+                        if first:
+                            first = False
+                            result = 'Tá aqui os horários de {}\n'.format(worker)
+                        result += '\n\n'+week_day + ':\n'
+                    result += time + '\n'
+
+        if result == '':
+            result = '{} não tem horários na planilha'.format(worker)
+
+        return result

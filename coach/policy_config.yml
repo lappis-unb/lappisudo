@@ -1,6 +1,6 @@
 policies:
   - name: KerasPolicy
-    epochs: 8
+    epochs: 30
     batch_size: 10
     featurizer:
       - name: FullDialogueTrackerFeaturizer

@@ -6,11 +6,9 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ../scripts/nginx.conf:/etc/nginx/conf.d/
+      - ./scripts/nginx:/etc/nginx/conf.d
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    depends_on:
-      - bot
-
+    
   # ============================= Rocketchat ==================================
   rocketchat:
     image: rocket.chat:0.69.2
@@ -50,7 +48,6 @@ services:
     volumes:
       - ./bot:/bot
       - ./scripts:/scripts
-    command: sh -c "make run-telegram"
 
   actions:
     build:

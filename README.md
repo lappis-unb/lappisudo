@@ -6,6 +6,16 @@ Este projeto teve como base a [Tais](http://github.com/lappis-unb/tais). Com o o
 
 ## Bot
 
+**Atenção**: Para funcionamento inicial das imagens docker citadas aqui, como "bot", "coach" e "requirements", é importante que em sua primeira execução deste repositório, seja executado:
+```sh
+docker-compose up -d rocketchat
+
+make first-run
+# ou 
+sudo make first-run
+```
+Este script foi configurado para construir as imagens genéricas necessárias para execução deste ambiente. Caso seu projeto utilize este boilerplate e vá realizar uma integração contínua ou similar, é interessante criar um repositório para as imagens e substitua os nomes das imagens "bot", "coach" e "requirements" pelas suas respectivas novas imagens, por exemplo "<organização>/bot" em repositório público, não sendo mais necessário então a execução do script "first-run".
+
 ### RocketChat
 
 ```sh
@@ -42,12 +52,10 @@ Para executar o bot em um site você precisa inserir o seguinte Javascript na su
 ```js
 <!-- Start of Rocket.Chat Livechat Script -->
 <script type="text/javascript">
+// !!! Mudar para o seu host AQUI !!!
+host = 'http://localhost:3000';
+// !!! ^^^^^^^^^^^^^^^^^^^^^^^^^^ !!!
 (function(w, d, s, u) {
-
-    // !!! Mudar para o seu host AQUI !!!
-    host = 'http://localhost:3000';
-    // !!! ^^^^^^^^^^^^^^^^^^^^^^^^^^ !!!
-
     w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
     var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
     j.async = true; j.src = host + '/packages/rocketchat_livechat/assets/rocketchat-livechat.min.js?_=201702160944';
@@ -60,32 +68,38 @@ Para executar o bot em um site você precisa inserir o seguinte Javascript na su
 **Atenção**: Você precisa alterar a variavel `host` dentro do código acima para a url do site onde estará
 o seu Rocket.Chat.
 
-
-
-
 ### Telegram
 
-* Atualize as variáveis de ambiente:
+Para realizar este processo, recomenda-se a criação de um [Bot para o Telegram](https://core.telegram.org/bots#3-how-do-i-create-a-bot) para obter todas as informações necessárias.
 
-```sh
-- TELEGRAM_BOT_USERNAME=lappisbot
-- TELEGRAM_TOKEN=token
-- TELEGRAM_WEBHOOK=webhook
+Para rodar a _stack_ do bot pelo Telegram juntamente com os serviços anexados, é necessário comentar a parte relacionada ao Rocket.Chat e descomentar o serviço relacionado ao bot do telegram.
+
+Após, é necessário utilizar o [ngrok](https://ngrok.com/download) para expor determinada porta para ser utilizado pelo Telegram.
+
+Ao baixar, é só executar utilizando o seguinte comando:
+
+```
+./ngrok http {porta utilizada}
 ```
 
-* Caso ainda não tenha treinado o bot execute:
+**Atenção:** O conector do Telegram está utilizando a porta 5001 como padrão. Caso queira mudar, somente altere a porta utilizada pelo no Makefile.
 
-```sh
-docker-compose run --rm bot make train
+Ao executar, será gerado um link onde será usado para recuperar todas as informações obtidas pelo webhook do Bot pelo Telegram, semelhante a este link:
+
+```
+Exemplo:
+https://283e291f.ngrok.io
 ```
 
-* Execute o script do bot no telegram:
+Configure todas as informações necessárias no docker-compose para integrar o bot do telegram criado:
 
-```sh
-docker-compose up bot-telegram
+```yml
+- TELEGRAM_ACCESS_TOKEN={token fornecido pelo BotFather}
+- VERIFY={username do bot}
+- WEBHOOK_URL={link do ngrok}/webhooks/telegram/webhook
 ```
 
-* A porta utilizada é a 5005
+Para executar somente o serviço do bot para o Telegram, utilize o seguinte comando:
 
 
 ### Console
@@ -102,6 +116,7 @@ sudo docker-compose run --rm bot make train
 sudo docker-compose run --rm bot make train-online
 ```
 
+### Visualização
 
 
 
@@ -128,6 +143,13 @@ sudo docker-compose up -d rocketchat
 sudo docker-compose up -d kibana
 sudo docker-compose run --rm -v $PWD/analytics:/analytics bot python /analytics/setup_elastic.py
 
-# aguarde 3 minutos para o rocketchat terminar de levantar
 sudo docker-compose up -d bot
 ```
+# Tecnologias do Projeto:
+- [Rasa](http://rasa.com) - Inteligência Artificial do Bot
+- [RocketChat](https://rocket.chat) - Mensageiro de comunicação do Bot
+- [Docker](https://www.docker.com) - Os ambientes são todos dockerizados
+
+# Licença
+
+Todo o framework do Rasa BoilerPlate é desenvolvido sob a licença [GPL3](https://github.com/lappis-unb/rasa-ptbr-boilerplate/blob/devel/LICENSE)

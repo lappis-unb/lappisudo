@@ -1,6 +1,16 @@
 version: '2'
 
 services:
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ../scripts/nginx.conf:/etc/nginx/conf.d/
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    depends_on:
+      - bot
+
   # ============================= Rocketchat ==================================
   rocketchat:
     image: rocket.chat:0.69.2

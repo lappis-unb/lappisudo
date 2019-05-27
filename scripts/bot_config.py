@@ -35,7 +35,7 @@ bot = {
     'name': os.getenv('ROCKETCHAT_BOT_NAME', 'Bot'),
     'username': os.getenv('ROCKETCHAT_BOT_USERNAME', 'bot'),
     'password': os.getenv('ROCKETCHAT_BOT_PASSWORD', 'bot'),
-    'avatar': os.getenv('ROCKETCHAT_BOT_AVATAR_URL', 'https://raw.githubusercontent.com/lappis-unb/rouana/master/images/rouana_avatar.jpeg'),
+    'avatar': os.getenv('ROCKETCHAT_BOT_AVATAR_URL', 'https://avatars3.githubusercontent.com/u/29209446?s=200&v=4'),
     'email': os.getenv('ROCKETCHAT_BOT_USERNAME', 'bot') + '@email.com',
 }
 

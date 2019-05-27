@@ -3,6 +3,9 @@ bot/models
 bot/rasa_core.log
 client_secret.json
 
+### Certbot ###
+certbot/
+
 ### Rasa evaluation ###
 notebooks/models/
 notebooks/errors.json

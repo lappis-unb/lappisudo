@@ -196,3 +196,18 @@
 - vocês programam em java
 - código em java
 - java
+
+## intent:diniz
+- quem eu xingo quando a internet do lappis cai
+- quem eu xingo quando a net do lappis cai
+- quando a internet cai quem eu xingo
+- respondável pela intenet do lappis
+- responsável pela net do lappis
+- a net caiu, a culpa é de quem
+- a net caiu, a culpa e de quem
+- a intertet caiu
+- internet cai
+- internet caiu
+- net lappis caiu
+- infra lappis
+- net caiu

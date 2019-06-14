@@ -31,6 +31,15 @@ intents:
   - bff
   - historia
   - risada
+  - nao_spoiler
+  - thanos
+  - entrei_vim
+  - melhor_editor
+  - melhor_anime
+  - foda_naruto
+  - o_que_faco_vida
+  - pergunta_fundamental
+  - toalha
 
   - quem_eh_lappisudo
   - quem_te_criou
@@ -46,6 +55,7 @@ intents:
   - como_contratar
   - quais_tecnologias
   - zoacao_java
+  - diniz
 
   - integrantes_agora
   - integrante_horario
@@ -536,6 +546,76 @@ templates:
           Minha missão é te mostrar o brilhantismo do Lappis, você pode perguntar sobre assuntos que estejam relacionados aos tópicos que eu listei lá em cima. Então bora lá!
           Que tal conhecer mais sobre os nossos projetos? Pergunta aí :P
 
+  utter_diniz:
+    - text: |
+          DINIZ !!! - 'o nome dele é DiNNNIz, ele vai arrumar a net'
+
+  utter_pergunta_fundamental:
+    - text: |
+          Shiuuuuu, eu fiquei sabendo que a resposta é 42!
+    - text: 
+          Ihhh, eu tava perguntando isso pra Deusa do Lappis, esses dias, acredita?
+          Ela me disse
+
+          "Ah, é X". Sabe como é né? Deuses sempre falam por icógnitas.
+
+  utter_nao_spoiler:
+    - text: |
+          Cara, vou te contar uma coisa irada, o Thanos é inevitável!!
+    - text: |
+          Professor Hulk ficou da hora, o Hulk não é nenhum palhaço não oh!
+    - text: |
+          Aquela cena da Jean Grey ficou da hora muleque!!
+    - text: |
+          WTF MAN! Tem uma hora que aparece até o Batman
+
+  utter_thanos:
+    - text: |
+          De acordo com as minhas pesquisas mais aprofundadas na área geek,
+          eu posso te garantir que ele tá INEVITÀVEL!!
+          Muita emoção, mano!
+
+  utter_entrei_vim:
+    - text: |
+          Desculpa amigo, eu tenho que rir:
+          hehehehehe
+          hahahahaha
+          ahasuhasuas
+          kosapskaospk
+
+    - text: |
+          Fica sussa que eu vou te dar um dica maneiraça:
+          Abre outro terminal e digite 'poweroff'.
+
+  utter_melhor_editor:
+    - text: |
+          Se você quer brilhar de verdade, aproveita que tá atoa pra usar o VIM.
+          Ele é do caralho!
+
+  utter_melhor_anime:
+    - text: |
+          InuYasha, mermão
+
+    - text: |
+        Mano, se você é Otaku você sabe que é Boku no Hero Academia, fika a dika.
+
+  utter_foda_naruto:
+    - text: |
+        O Itachi é tão bom quanto software livre!!
+
+  utter_o_que_faco_vida:
+    - text: |
+        Tá atoa joga um d20...
+
+    - text: |
+        Brother, você quer arrasar? Joga um D&D e sai destruindo tudo.
+
+  utter_toalha:
+    - text: |
+        Os grandes oráculos uma vez me disseram que a toalha é um objeto essencial para um mochileiro,
+        Você só pode se considerar um se tiver tal objeto magnífico pra brilhar eles me disseram que:
+        "A toalha é o objeto mais importante para um mochileiro, ela pode servir como agasalho quando atravessar as frias luas de Beta de Jagla; pode deitar-se sobre ela nas reluzentes praias de areia marmórea de Santragino V, respirando os inebriantes vapores marítimos; você pode dormir debaixo dela sob as estrelas que brilham avermelhadas no mundo desértico de Kakrafoon; pode usá-la como vela para descer numa minijangada as águas lentas e pesadas do rio Moth; pode umedecê-la e utilizá-la para lutar em um combate corpo a corpo; enrolá-la em torno da cabeça para proteger-se de emanações tóxicas ou para evitar o olhar da Terrível Besta Voraz de Traal (um animal estonteantemente burro, que acha que, se você não pode vê-lo, ele também não pode ver você -estúpido feito uma anta, mas muito, muito voraz); você pode agitar a toalha em situações de emergência para pedir socorro; e naturalmente pode usá-la para enxugar-se com ela se ainda estiver razoavelmente limpa".
+
   utter_aviso_action:
     - text: |
           Blz, vou me conectar ;)
@@ -572,6 +652,15 @@ actions:
   - utter_bff
   - utter_historia
   - utter_risada
+  - utter_nao_spoiler
+  - utter_thanos
+  - utter_entrei_vim
+  - utter_melhor_editor
+  - utter_melhor_anime
+  - utter_foda_naruto
+  - utter_o_que_faco_vida
+  - utter_pergunta_fundamental
+  - utter_toalha
 
   - utter_quem_eh_lappisudo
   - utter_quem_te_criou
@@ -590,6 +679,7 @@ actions:
   - utter_manter_conversa
   - utter_manter_objetivo
   - utter_aviso_action
+  - utter_diniz
 
   - action_integrantes_agora
   - action_integrante_horario

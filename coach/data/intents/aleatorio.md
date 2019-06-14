@@ -242,3 +242,139 @@
 - chorei de ri
 - ri
 - rachei
+
+## intent:nao_spoiler
+- me da um nao spoiler de vingadores
+- me da um spoiler dos vingadores
+- me conta um não spoiler dos vingadores
+- me conta um spoler dos vingadores
+- quero saber um spoiler dos vingadores
+- quero saber um nao spoiler dos vingadores
+- me diz spoiler dos vingadores
+- me fala um nao spoiler dos vingadores
+- me fala um spoiler dos vingadores
+- spoiler do filme vingadores
+- filme vingadores
+- spoiler vingadores
+- vingadores
+
+## intent:thanos
+- quem é inevitável
+- quem e inevitavel
+- ele é inevitável
+- ele e inevitavel
+- thanos é inevitavel
+- personagem inevitável
+- me conta quem é inevitável
+- me fala quem é inevitável
+- thanos e inevitável
+- thanos dos vigandores
+- personagem thanos
+- thanos
+
+## intent:entrei_vim
+- entrei no vim e não sei sair como faz
+- entrei no vim sem querer
+- entrei no vim e não sei sair
+- quero sair do vim
+- como faz pra sair do vim
+- nao sei sair do vim
+- não sei sair do vim
+- to perdido no vim
+- não sei usar vim
+- nao seu usar vim
+- como sair do vim
+- sair vim
+- nao sei vim
+
+## intent:melhor_anime
+- qual é o melhor anime de todos os tempos
+- qual e o melhor anime de todos os tempos
+- quero saber qual é o melhor anime de todos os tempos
+- qual o seu anime favorito da vida toda
+- qual o melhor anime pra me indicar
+- qual é o melhor anime
+- melhor anime
+- seu anime favorito
+- melhor anime da vida
+- melhor anime de todos os tempos
+- melhor anime
+- anime
+
+## intent:foda_naruto
+- quem é o mais foda do naruto
+- qual o melhor personagem do naruto
+- qual o personagem mais foda do naruto
+- qual o seu personagem favorito do naruto
+- me diz quem é o mais foda do naruto
+- quem é o mais foda do anime naruto
+- que e o mais foda do naruto
+- personagem mais foda do naruto
+- seu personagem favorito do  naruto
+- personagem favotiro do naruto
+- favorito do naruto
+- personagem naruto
+- mais foda naruto
+
+## intent:o_que_faco_vida
+- o que eu faço da minha vida
+- o que eu faco da minha vida
+- o que posso fazer da vida
+- me conta o que eu posso fazer da vida
+- quero saber o que faço da vida
+- me fala sobre o que faço da vida
+- quero falar sobre o que posso fazer da vida
+- me diz o que faço da vida
+- conselhos pra vida
+- o que faco da vida
+- o que faço da vida
+- faço da minha vida
+- faco da minha vida
+- faço da vida
+- faco da vida
+
+## intent:melhor_editor
+- qual é melhor IDE para programar em Python
+- qual e o melhor ide para programar em python
+- qual é melhor IDE para programar em Perl
+- qual é melhor IDE para programar em C
+- qual é melhor IDE para programar em C#
+- qual é melhor IDE para programar em Java
+- qual é melhor IDE para programar em ShellScript
+- qual é melhor IDE para programar em Go
+- qual é melhor IDE para programar em Lua
+- qual é o melhor editor de texto
+- qual o melhor editor de texto
+
+## intent: pergunta_fundamental
+- qual é a resposta para a pergunta fundamental sobre a vida o universo e tudo mais
+- qual e a resposta para a pergunta fundamental sobre a vida
+- qual é a resposta para a pergunta fundamental
+- qual é a resposta para a pergunta
+- me fala a resposta da pergunta fundamental
+- me conta a resposta da pergunta fundamental
+- referência mochileiro das galáxias
+- ref mochileiro das galaxias
+- resosta para pergunta fundamental
+- resposta fundamental
+- pergunta fundamental sobre o universo
+- pergunta fundamental sobre a vida
+- pergunta fundamental
+- questão fundamental
+
+## intent: toalha
+- qual a utilidade da toalha para um mochileiro das galáxias
+- me conta a utilidade da toalha
+- me fala sobre a utilidade da toalha
+- quero saber qual é a utilidade da toalha
+- gostaria de saber qual é a utilidade da toalha
+- quero falar sobre a utilidade da toalha
+- qual a utilidade da toalha 
+- para que serve uma toalha
+- para que usar toalha
+- utilidade da toalha
+- mochileiro das galáxias
+- mochileiro das galaxias
+- toalha mochileiro
+- dia da toalha
+- toalha

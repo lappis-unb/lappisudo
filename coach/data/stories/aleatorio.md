@@ -54,6 +54,7 @@
 * de_onde_voce_eh
     - utter_de_onde_voce_eh
 
+## path_de_relacionamento
 * relationship
     - utter_relationship
 
@@ -106,11 +107,7 @@
     - utter_manter_conversa
 
 ## path_pergunta-fundamental 3
-* cumprimentar
-    - utter_cumprimentar
 * pergunta_fundamental
-    - utter_pergunta_fundamental
-    - utter_manter_conversa
     - utter_toalha
     - utter_manter_conversa
 
@@ -171,8 +168,7 @@
 * entrei_vim
     - utter_entrei_vim
     - utter_manter_conversa
-    - utter_toalha
-    - utter_manter_conversa
+
 
 ## path_entrei_vim 2
 * entrei_vim
@@ -208,11 +204,6 @@
     - utter_manter_conversa
 
 ## path_nao_spoiler 3
-* cumprimentar
-    - utter_cumprimentar
 * diniz
     - utter_diniz
-    - utter_manter_conversa
-* nao_spoiler
-    - utter_nao_spoiler
     - utter_manter_conversa

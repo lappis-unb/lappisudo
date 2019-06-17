@@ -148,6 +148,8 @@
 - deusa lappis
 - coordenadora
 - carla
+- quem é a rainha do laboratório
+- rainha
  
 ## intent:como_contratar
 - como posso entrar em contato com  lappis

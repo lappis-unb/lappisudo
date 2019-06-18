@@ -294,6 +294,7 @@
 - qual o seu anime favorito da vida toda
 - qual o melhor anime pra me indicar
 - qual é o melhor anime
+- qual e o melhor anime
 - melhor anime
 - seu anime favorito
 - melhor anime da vida

@@ -572,7 +572,7 @@ templates:
   utter_thanos:
     - text: |
           De acordo com as minhas pesquisas mais aprofundadas na área geek,
-          eu posso te garantir que ele tá INEVITÀVEL!!
+          eu posso te garantir que ele tá INEVITÁVEL!!
           Muita emoção, mano!
 
   utter_entrei_vim:

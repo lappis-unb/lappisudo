@@ -22,13 +22,21 @@ services:
     volumes:
       - ./data/db:/data/db
     command: mongod --smallfiles --oplogSize 128
-
-  # ================================= Bot =====================================
-  bot:
-    image: bot
+  # =============================== Coach =================================  
+  coach:
+    container_name: coach
     build:
       context: .
-      dockerfile: ./docker/bot.Dockerfile
+      dockerfile: ./docker/coach.Dockerfile
+    image: lappis/coach:boilerplate
+    ports:
+      - 80:80
+    environment:
+      - AUGMENTATION_FACTOR=50
+      - VALIDATION_SPLIT=0.2
+  # ================================= Bot =====================================
+  bot:
+    image: pablodiegoss/bot:boilerplate
     restart: unless-stopped
     command: make run-rocketchat 
     env_file:
@@ -38,9 +46,7 @@ services:
       - 5002:5002
     depends_on:
       - actions
-    volumes:
-      - ./bot:/bot
-      - ./scripts:/scripts
+      - coach
 
   actions:
     build:
@@ -71,15 +77,4 @@ services:
         - ./scripts:/scripts
       command: sh -c "make run-telegram"
 
-  # =============================== Notebooks =================================
-  notebooks:
-    build:
-      context: .
-      dockerfile: ./docker/notebooks.Dockerfile
-    env_file:
-      - docker/notebooks.env
-    volumes:
-      - ./bot:/work/bot
-      - ./notebooks:/work/notebooks
-    ports:
-      - 8888:8888
+

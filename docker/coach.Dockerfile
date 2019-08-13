@@ -1,12 +1,8 @@
-FROM requirements:latest
+FROM pablodiegoss/coach:boilerplate
 
-COPY ./coach /coach
-COPY ./scripts /scripts
-
-RUN mkdir /src_models
-
-WORKDIR /coach
+COPY ./coach/config /coach/config
+COPY ./coach/data /coach/data
 
 RUN make train
 
-RUN find /. | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+CMD ["nginx", "-g", "daemon off;"]

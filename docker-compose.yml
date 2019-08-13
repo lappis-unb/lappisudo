@@ -28,7 +28,6 @@ services:
     build:
       context: .
       dockerfile: ./docker/coach.Dockerfile
-    image: lappis/coach:boilerplate
     ports:
       - 80:80
     environment:

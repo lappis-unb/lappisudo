@@ -49,8 +49,8 @@ services:
     ports:
       - 5055:5055
     volumes:
-      - ./bot/actions:/bot/actions
-      - ./bot/Makefile:/bot/Makefile
+      - ./actions:/bot/actions
+      - ./actions/Makefile:/bot/Makefile
     command: "make run-actions"
 
   # ============================ Telegram Bot =================================

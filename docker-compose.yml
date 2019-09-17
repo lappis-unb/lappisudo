@@ -35,7 +35,7 @@ services:
       - VALIDATION_SPLIT=0.2
   # ================================= Bot =====================================
   bot:
-    image: pablodiegoss/bot:boilerplate
+    image: lappis/bottis_bot:latest
     restart: unless-stopped
     command: make run-rocketchat 
     env_file:

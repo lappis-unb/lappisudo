@@ -1,4 +1,4 @@
-FROM pablodiegoss/coach:boilerplate
+FROM lappis/bottis_coach:latest
 
 COPY ./coach/config /coach/config
 COPY ./coach/data /coach/data

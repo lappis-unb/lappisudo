@@ -581,13 +581,28 @@
 
 ## path 2
 * cumprimentar
-        - utter_cumprimentar
-        - utter_manter_objetivo
+    - utter_cumprimentar
+    - utter_manter_objetivo
 * quem_te_criou
-        - utter_quem_te_criou
-        - utter_manter_conversa
+    - utter_quem_te_criou
+    - utter_manter_conversa
 
 ## path 2
 * quem_te_criou
-        - utter_quem_te_criou
-        - utter_manter_conversa
+    - utter_quem_te_criou
+    - utter_manter_conversa
+
+## diniz 1
+* diniz
+    - utter_diniz
+    - utter_manter_conversa
+
+## diniz 2
+* cumprimentar
+    - utter_cumprimentar
+* diniz
+    - utter_diniz
+    - utter_manter_conversa
+* foda_naruto
+    - utter_foda_naruto
+    - utter_manter_conversa

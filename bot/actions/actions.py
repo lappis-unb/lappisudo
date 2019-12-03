@@ -1,47 +1,48 @@
-from rasa_core_sdk import Action
-from rasa_core_sdk.events import SlotSet
-from . import googlesheet
-import logging
-import datetime
-from datetime import date
-import requests
+## This files contains your custom actions which can be used to run
+# custom Python code.
+#
+# See this guide on how to implement these action:
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
 
-logger = logging.getLogger(__name__)
+class ActionTeste(Action):
+    def name(self) -> Text:
+        return "action_teste"
 
-
-class ActionIntegrantesAgora(Action):
-    def name(self):
-        return "action_integrantes_agora"
-
-    def run(self, dispatcher, tracker, domain):        
-        dispatcher.utter_message("Já saí de dentro do rasa_core e indo buscar o que deseja")
-        sheet = None
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
         try:
-            sheet = googlesheet.GoogleSheetIntegration()
+            dispatcher.utter_message("Mensagem enviada por uma custom action.")
         except ValueError:
-            dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
-            logger.error(ValueError)
-        try:
-            dispatcher.utter_message(sheet.get_now_timetable())
-        except ValueError:
-            dispatcher.utter_message("Não consegui ler a planilha :/")
-            logger.error(ValueError)
+            dispatcher.utter_message(ValueError)
+        return []
 
-class ActionIntegranteHorario(Action):
-    def name(self):
-        return "action_integrante_horario"
 
-    def run(self, dispatcher, tracker, domain):        
-        name = tracker.current_slot_values()['nome']
-        try:
-            sheet = googlesheet.GoogleSheetIntegration()
-        except ValueError:
-            dispatcher.utter_message("Não consegui me conectar ao google sheets :/")
-            logger.error(ValueError)
-        try:
-            dispatcher.utter_message(sheet.get_worker_timetable(name))
-        except ValueError:
-            dispatcher.utter_message("Não consegui ler a planilha :/")
-            logger.error(ValueError)
+class ActionCPF(Action):
+    def name(self) -> Text:
+        return "action_cpf"
 
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        cpf = tracker.get_slot('cpf')
+
+        try:
+            dispatcher.utter_message("O seu CPF é {}?".format(cpf))
+        except ValueError:
+            dispatcher.utter_message(ValueError)
+        return [SlotSet("cpf", cpf)]

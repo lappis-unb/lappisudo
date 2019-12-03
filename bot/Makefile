@@ -1,24 +1,37 @@
-run-rocketchat:
-	python3 run-rocketchat.py
+.PHONY: all clean actions
 
-run-telegram:
-	python -m rasa_core.run -d /models/dialogue -u /models/nlu/current --port 5001 --credentials credentials.yml --endpoints endpoints.yml
+clean:
+	rm -rf graph.html results/ models/*
 
-config-rocket:
-	python /scripts/bot_config.py
+############################## BOT ############################## 
+# NLU
+train-nlu:
+	rasa train nlu -vv 
 
-run-console:
-	python3 -m rasa_core.run -d /models/dialogue -u /models/nlu/current \
-  --debug --endpoints endpoints.yml
+test-nlu:
+	rasa test nlu -vv 
 
-run-api:
-	python3 -m rasa_core.run -d /models/dialogue -u /models/nlu/current \
-  --endpoints endpoints.yml --debug --enable_api 
+# CORE
+train:
+	rasa train -vv --out models/
 
-evaluate:
-	python3 -m rasa_core.evaluate -d /models/dialogue -s data/core/
+validate:
+	rasa data validate -vv
 
-run-actions:
-	python -m rasa_core_sdk.endpoint --actions actions
+# MENSAGEIROS
+shell:
+	rasa shell -m models/ -vv --endpoints endpoints.yml --port 5004 --cors "*"
 
+telegram:
+	rasa run -m models/ -vv --port 5001 --credentials credentials.yml \
+	--endpoints endpoints.yml
 
+webchat:
+	rasa run -m models/ -vv --endpoints endpoints.yml --credentials credentials.yml --port 5005 --cors '*'
+
+api:
+	rasa run -m models/ -vv --endpoints endpoints.yml --enable-api
+
+# ACTIONS
+actions:
+	rasa run actions --actions actions -vv
